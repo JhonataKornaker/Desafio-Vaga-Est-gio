@@ -3,10 +3,10 @@ import java.util.List;
 import java.util.Scanner;
 
 public class QuestaoUm {
-    private static int numFibonacci;
-    private static List<Integer> arrayFibonacci = new ArrayList<>();
-
     public static void main(String[] args) {
+        int numFibonacci;
+        List<Integer> arrayFibonacci = new ArrayList<>();
+
         Scanner e = new Scanner(System.in);
         System.out.println("Digite um numero para calcular o Fibonacci");
         numFibonacci = e.nextInt();
@@ -19,7 +19,7 @@ public class QuestaoUm {
 
         System.out.println("");
 
-        System.out.println(verificaNum(numFibonacci));
+        System.out.println(verificaNum(arrayFibonacci, numFibonacci));
 
         e.close();
     }
@@ -29,8 +29,8 @@ public class QuestaoUm {
         }
         return calcularFibonacci(num - 1) + calcularFibonacci(num - 2);
     }
-    public static String verificaNum(int num) {
-        boolean value = arrayFibonacci.contains(num);
+    public static String verificaNum(List numList, int num) {
+        boolean value = numList.contains(num);
         if(value) {
             return "O numero " + num + " faz parte da sequencia Fibonacci";
         }
